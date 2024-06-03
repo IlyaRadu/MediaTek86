@@ -1,4 +1,4 @@
-﻿namespace MediaTek86.Views
+namespace MediaTek86.Views
 {
     partial class MainForm
     {
@@ -56,81 +56,70 @@
             this.lblMotif = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
+
             // dataGridView
-            // 
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Location = new System.Drawing.Point(12, 12);
             this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(841, 200);
+            this.dataGridView.Size = new System.Drawing.Size(776, 200);
             this.dataGridView.TabIndex = 0;
-            // 
+
             // txtIdPersonnel
-            // 
-            this.txtIdPersonnel.Enabled = false;
             this.txtIdPersonnel.Location = new System.Drawing.Point(100, 230);
             this.txtIdPersonnel.Name = "txtIdPersonnel";
             this.txtIdPersonnel.Size = new System.Drawing.Size(100, 20);
             this.txtIdPersonnel.TabIndex = 1;
-            // 
+            this.txtIdPersonnel.Enabled = false;
+
             // txtNom
-            // 
             this.txtNom.Location = new System.Drawing.Point(100, 260);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(100, 20);
             this.txtNom.TabIndex = 2;
-            // 
+
             // txtPrenom
-            // 
             this.txtPrenom.Location = new System.Drawing.Point(100, 290);
             this.txtPrenom.Name = "txtPrenom";
             this.txtPrenom.Size = new System.Drawing.Size(100, 20);
             this.txtPrenom.TabIndex = 3;
-            // 
+
             // txtTel
-            // 
             this.txtTel.Location = new System.Drawing.Point(100, 320);
             this.txtTel.Name = "txtTel";
             this.txtTel.Size = new System.Drawing.Size(100, 20);
             this.txtTel.TabIndex = 4;
-            // 
+
             // txtMail
-            // 
             this.txtMail.Location = new System.Drawing.Point(100, 350);
             this.txtMail.Name = "txtMail";
             this.txtMail.Size = new System.Drawing.Size(100, 20);
             this.txtMail.TabIndex = 5;
-            // 
+
             // txtProfil
-            // 
             this.txtProfil.Location = new System.Drawing.Point(100, 380);
             this.txtProfil.Name = "txtProfil";
             this.txtProfil.Size = new System.Drawing.Size(100, 20);
             this.txtProfil.TabIndex = 6;
-            // 
+
             // txtDateDebut
-            // 
             this.txtDateDebut.Location = new System.Drawing.Point(100, 410);
             this.txtDateDebut.Name = "txtDateDebut";
             this.txtDateDebut.Size = new System.Drawing.Size(100, 20);
             this.txtDateDebut.TabIndex = 7;
-            // 
+
             // txtDateFin
-            // 
             this.txtDateFin.Location = new System.Drawing.Point(100, 440);
             this.txtDateFin.Name = "txtDateFin";
             this.txtDateFin.Size = new System.Drawing.Size(100, 20);
             this.txtDateFin.TabIndex = 8;
-            // 
+
             // txtMotif
-            // 
             this.txtMotif.Location = new System.Drawing.Point(100, 470);
             this.txtMotif.Name = "txtMotif";
             this.txtMotif.Size = new System.Drawing.Size(100, 20);
             this.txtMotif.TabIndex = 9;
-            // 
+
             // btnAdd
-            // 
             this.btnAdd.Location = new System.Drawing.Point(220, 230);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
@@ -138,9 +127,8 @@
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAddPersonnel_Click);
-            // 
+
             // btnUpdate
-            // 
             this.btnUpdate.Location = new System.Drawing.Point(220, 260);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(75, 23);
@@ -148,9 +136,8 @@
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
+
             // btnDelete
-            // 
             this.btnDelete.Location = new System.Drawing.Point(220, 290);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
@@ -158,9 +145,8 @@
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
+
             // btnSave
-            // 
             this.btnSave.Location = new System.Drawing.Point(220, 320);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
@@ -168,9 +154,8 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
+
             // btnCancel
-            // 
             this.btnCancel.Location = new System.Drawing.Point(220, 350);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
@@ -178,91 +163,81 @@
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
+
             // lblIdPersonnel
-            // 
             this.lblIdPersonnel.AutoSize = true;
             this.lblIdPersonnel.Location = new System.Drawing.Point(12, 233);
             this.lblIdPersonnel.Name = "lblIdPersonnel";
-            this.lblIdPersonnel.Size = new System.Drawing.Size(68, 13);
+            this.lblIdPersonnel.Size = new System.Drawing.Size(64, 13);
             this.lblIdPersonnel.TabIndex = 15;
             this.lblIdPersonnel.Text = "ID Personnel";
-            // 
+
             // lblNom
-            // 
             this.lblNom.AutoSize = true;
             this.lblNom.Location = new System.Drawing.Point(12, 263);
             this.lblNom.Name = "lblNom";
             this.lblNom.Size = new System.Drawing.Size(29, 13);
             this.lblNom.TabIndex = 16;
             this.lblNom.Text = "Nom";
-            // 
+
             // lblPrenom
-            // 
             this.lblPrenom.AutoSize = true;
             this.lblPrenom.Location = new System.Drawing.Point(12, 293);
             this.lblPrenom.Name = "lblPrenom";
             this.lblPrenom.Size = new System.Drawing.Size(43, 13);
             this.lblPrenom.TabIndex = 17;
             this.lblPrenom.Text = "Prenom";
-            // 
+
             // lblTel
-            // 
             this.lblTel.AutoSize = true;
             this.lblTel.Location = new System.Drawing.Point(12, 323);
             this.lblTel.Name = "lblTel";
             this.lblTel.Size = new System.Drawing.Size(22, 13);
             this.lblTel.TabIndex = 18;
             this.lblTel.Text = "Tel";
-            // 
+
             // lblMail
-            // 
             this.lblMail.AutoSize = true;
             this.lblMail.Location = new System.Drawing.Point(12, 353);
             this.lblMail.Name = "lblMail";
             this.lblMail.Size = new System.Drawing.Size(26, 13);
             this.lblMail.TabIndex = 19;
             this.lblMail.Text = "Mail";
-            // 
+
             // lblProfil
-            // 
             this.lblProfil.AutoSize = true;
             this.lblProfil.Location = new System.Drawing.Point(12, 383);
             this.lblProfil.Name = "lblProfil";
             this.lblProfil.Size = new System.Drawing.Size(30, 13);
             this.lblProfil.TabIndex = 20;
             this.lblProfil.Text = "Profil";
-            // 
+
             // lblDateDebut
-            // 
             this.lblDateDebut.AutoSize = true;
             this.lblDateDebut.Location = new System.Drawing.Point(12, 413);
             this.lblDateDebut.Name = "lblDateDebut";
             this.lblDateDebut.Size = new System.Drawing.Size(62, 13);
             this.lblDateDebut.TabIndex = 21;
             this.lblDateDebut.Text = "Date Debut";
-            // 
+
             // lblDateFin
-            // 
             this.lblDateFin.AutoSize = true;
             this.lblDateFin.Location = new System.Drawing.Point(12, 443);
             this.lblDateFin.Name = "lblDateFin";
             this.lblDateFin.Size = new System.Drawing.Size(47, 13);
             this.lblDateFin.TabIndex = 22;
             this.lblDateFin.Text = "Date Fin";
-            // 
+
             // lblMotif
-            // 
             this.lblMotif.AutoSize = true;
             this.lblMotif.Location = new System.Drawing.Point(12, 473);
             this.lblMotif.Name = "lblMotif";
             this.lblMotif.Size = new System.Drawing.Size(30, 13);
             this.lblMotif.TabIndex = 23;
             this.lblMotif.Text = "Motif";
-            // 
+
             // MainForm
-            // 
-            this.ClientSize = new System.Drawing.Size(865, 520);
+            this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.lblMotif);
             this.Controls.Add(this.lblDateFin);
             this.Controls.Add(this.lblDateDebut);
@@ -292,7 +267,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
     }
 }
