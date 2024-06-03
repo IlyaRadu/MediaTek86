@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaTek86", "MediaTek86\MediaTek86.csproj", "{BFA2660F-B415-431F-9969-7BF8F11F6EDF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BFA2660F-B415-431F-9969-7BF8F11F6EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFA2660F-B415-431F-9969-7BF8F11F6EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFA2660F-B415-431F-9969-7BF8F11F6EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFA2660F-B415-431F-9969-7BF8F11F6EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1A8BC1A-7C1A-4FFD-9CBC-93407288CC64}
+	EndGlobalSection
+EndGlobal
