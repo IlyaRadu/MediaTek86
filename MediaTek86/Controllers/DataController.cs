@@ -1,70 +1,136 @@
-﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
-using MediaTek86.Models;
+using MySql.Data.MySqlClient;
 
 namespace MediaTek86.Controllers
 {
     public class DataController
     {
-        private string connectionString = "server=localhost;database=mediatek86;user=mediatek_user;password=secure_password;";
+        // Chaîne de connexion à la base de données
+        private readonly string connectionString = "server=localhost;database=mediatek86;user=root;password=yourpassword";
 
+        // Méthode pour récupérer des données depuis la base de données
         public DataTable GetData(string query)
         {
+            DataTable dataTable = new DataTable();
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                return dataTable;
-            }
-        }
-
-        public void ExecuteQuery(string query)
-        {
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                MySqlCommand cmd = new MySqlCommand(query, connection);
                 connection.Open();
-                cmd.ExecuteNonQuery();
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        dataTable.Load(reader);
+                    }
+                }
             }
+            return dataTable;
         }
 
+        // Méthode pour ajouter du personnel
         public void AddPersonnel(Personnel personnel)
         {
-            string query = $"INSERT INTO personnel (nom, prenom, tel, mail, profil) VALUES ('{personnel.Nom}', '{personnel.Prenom}', '{personnel.Tel}', '{personnel.Mail}', '{personnel.Profil}')";
-            ExecuteQuery(query);
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "INSERT INTO personnel (nom, prenom, tel, mail, profil) VALUES (@Nom, @Prenom, @Tel, @Mail, @Profil)";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Nom", personnel.Nom);
+                    command.Parameters.AddWithValue("@Prenom", personnel.Prenom);
+                    command.Parameters.AddWithValue("@Tel", personnel.Tel);
+                    command.Parameters.AddWithValue("@Mail", personnel.Mail);
+                    command.Parameters.AddWithValue("@Profil", personnel.Profil);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
+        // Méthode pour mettre à jour du personnel
         public void UpdatePersonnel(Personnel personnel)
         {
-            string query = $"UPDATE personnel SET nom = '{personnel.Nom}', prenom = '{personnel.Prenom}', tel = '{personnel.Tel}', mail = '{personnel.Mail}', profil = '{personnel.Profil}' WHERE idpersonnel = {personnel.IdPersonnel}";
-            ExecuteQuery(query);
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "UPDATE personnel SET nom = @Nom, prenom = @Prenom, tel = @Tel, mail = @Mail, profil = @Profil WHERE idpersonnel = @IdPersonnel";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Nom", personnel.Nom);
+                    command.Parameters.AddWithValue("@Prenom", personnel.Prenom);
+                    command.Parameters.AddWithValue("@Tel", personnel.Tel);
+                    command.Parameters.AddWithValue("@Mail", personnel.Mail);
+                    command.Parameters.AddWithValue("@Profil", personnel.Profil);
+                    command.Parameters.AddWithValue("@IdPersonnel", personnel.IdPersonnel);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
+        // Méthode pour supprimer du personnel
         public void DeletePersonnel(int idPersonnel)
         {
-            string query = $"DELETE FROM personnel WHERE idpersonnel = {idPersonnel}";
-            ExecuteQuery(query);
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "DELETE FROM personnel WHERE idpersonnel = @IdPersonnel";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@IdPersonnel", idPersonnel);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
+        // Méthode pour ajouter une absence
         public void AddAbsence(Absence absence)
         {
-            string query = $"INSERT INTO absence (idpersonnel, datedebut, datefin, motif) VALUES ({absence.IdPersonnel}, '{absence.DateDebut:yyyy-MM-dd}', '{absence.DateFin:yyyy-MM-dd}', '{absence.Motif}')";
-            ExecuteQuery(query);
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "INSERT INTO absence (idpersonnel, datedebut, datefin, motif) VALUES (@IdPersonnel, @DateDebut, @DateFin, @Motif)";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@IdPersonnel", absence.IdPersonnel);
+                    command.Parameters.AddWithValue("@DateDebut", absence.DateDebut);
+                    command.Parameters.AddWithValue("@DateFin", absence.DateFin);
+                    command.Parameters.AddWithValue("@Motif", absence.Motif);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
+        // Méthode pour mettre à jour une absence
         public void UpdateAbsence(Absence absence)
         {
-            string query = $"UPDATE absence SET datedebut = '{absence.DateDebut:yyyy-MM-dd}', datefin = '{absence.DateFin:yyyy-MM-dd}', motif = '{absence.Motif}' WHERE idabsence = {absence.IdAbsence}";
-            ExecuteQuery(query);
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "UPDATE absence SET idpersonnel = @IdPersonnel, datedebut = @DateDebut, datefin = @DateFin, motif = @Motif WHERE idabsence = @IdAbsence";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@IdPersonnel", absence.IdPersonnel);
+                    command.Parameters.AddWithValue("@DateDebut", absence.DateDebut);
+                    command.Parameters.AddWithValue("@DateFin", absence.DateFin);
+                    command.Parameters.AddWithValue("@Motif", absence.Motif);
+                    command.Parameters.AddWithValue("@IdAbsence", absence.IdAbsence);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
 
+        // Méthode pour supprimer une absence
         public void DeleteAbsence(int idAbsence)
         {
-            string query = $"DELETE FROM absence WHERE idabsence = {idAbsence}";
-            ExecuteQuery(query);
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "DELETE FROM absence WHERE idabsence = @IdAbsence";
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@IdAbsence", idAbsence);
+                    command.ExecuteNonQuery();
+                }
+            }
         }
     }
 }
