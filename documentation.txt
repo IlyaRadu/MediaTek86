@@ -1,0 +1,22 @@
+Dans le cadre de ce projet, une application a été développée pour gérer le personnel et ses absences dans la médiathèque MediaTek86. L'application permet d'ajouter, d'éditer et de supprimer les fiches des agents et de leurs absences, et fournit une interface conviviale pour interagir avec la base de données.
+
+MediaTek86 est le réseau qui gère les médiathèques du département de la Vienne. L'objectif du projet était de créer une application bureautique permettant de gérer le personnel de chaque médiathèque, leurs affectations aux services et leurs absences.
+
+La tâche principale du projet était de développer une application bureautique en C# utilisant une base de données MySQL. L'application doit inclure des fonctionnalités de gestion du personnel et de leurs absences et fournir une interface conviviale pour les utilisateurs.
+
+Les outils suivants ont été installés pour mettre en œuvre le projet :
+
+Wampserver pour travailler avec MySQL.
+Visual Studio pour développer l'application en C#.
+Looping pour la modélisation de la base de données.
+Le script SQL a été utilisé pour créer la base de données mediatek86 et les tables personnel, absence, service, motif, responsable.
+
+Développement d'une interface d'application dans Visual Studio qui inclut une table pour afficher les données relatives au personnel et aux absences. L'application est structurée selon le modèle MVC. Un formulaire MainForm avec des contrôles pour l'ajout, l'édition et la suppression d'enregistrements a été créé.
+
+Des méthodes pour travailler avec la base de données sont mises en œuvre : ajout, modification et suppression d'enregistrements. Des gestionnaires d'événements pour l'interaction avec les contrôles du formulaire sont mis en place. Des tests ont été effectués pour vérifier l'exactitude de toutes les fonctions.
+
+Création d'un dépôt sur GitHub pour stocker le code du projet. Pousser toutes les modifications vers le dépôt. Création d'un tableau Kanban pour la gestion des tâches et le suivi de la progression.
+
+Le projet MediaTek86 a été mis en œuvre avec succès et comprend toutes les fonctionnalités nécessaires pour gérer le personnel et ses absences. L'application fournit une interface conviviale pour interagir avec la base de données et permet une gestion efficace des données. Toutes les phases du projet ont été réalisées conformément aux exigences.
+
+Le script complet de la base de données se trouve dans le fichier « database.sql »
