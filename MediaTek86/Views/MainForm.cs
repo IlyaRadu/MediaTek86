@@ -1,4 +1,4 @@
-﻿using MediaTek86.Controllers;
+using MediaTek86.Controllers;
 using MediaTek86.Models;
 using System;
 using System.Data;
@@ -19,6 +19,7 @@ namespace MediaTek86.Views
             dataGridView.SelectionChanged += DataGridView_SelectionChanged;
         }
 
+        // Chargement des données depuis la base de données
         private void LoadData()
         {
             string personnelQuery = "SELECT idpersonnel, nom, prenom, tel, mail, profil FROM personnel";
@@ -26,7 +27,6 @@ namespace MediaTek86.Views
             var personnelData = dataController.GetData(personnelQuery);
             var absenceData = dataController.GetData(absenceQuery);
 
-            // Объединение данных в одну таблицу
             var combinedData = new DataTable();
             combinedData.Columns.Add("idpersonnel", typeof(int));
             combinedData.Columns.Add("nom", typeof(string));
@@ -75,7 +75,6 @@ namespace MediaTek86.Views
 
             dataGridView.DataSource = combinedData;
 
-            // Скрытие ID колонок
             dataGridView.Columns["idpersonnel"].Visible = false;
             dataGridView.Columns["idabsence"].Visible = false;
         }
